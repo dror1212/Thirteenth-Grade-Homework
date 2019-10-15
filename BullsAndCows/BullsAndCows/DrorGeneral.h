@@ -90,4 +90,4 @@ void CheckHits(unsigned short, unsigned short, unsigned short []);
 
 void CheckKliaa(unsigned short, unsigned short, unsigned short []);
 
-void CountAmmountOfNumbers(unsigned short number, unsigned short hits[]);
+void CountAmmountOfNumbers(unsigned short, unsigned short []);

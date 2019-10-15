@@ -556,7 +556,6 @@ void EmptyAVector(int vec[], int length)
 
 void CountAmmountOfNumbers(unsigned short number, unsigned short hits[])
 {
-	// Variable definition
 	for (number; number; number /= TEN)
 	{
 		hits[number % TEN]++;
