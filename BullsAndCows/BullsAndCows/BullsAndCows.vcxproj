@@ -118,7 +118,6 @@
     <ClInclude Include="DrorGeneral.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="check.c" />
     <ClCompile Include="Main.c" />
     <ClCompile Include="Functions.c" />
   </ItemGroup>
