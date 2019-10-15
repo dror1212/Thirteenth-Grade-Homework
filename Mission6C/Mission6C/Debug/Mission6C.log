@@ -1,0 +1,10 @@
+﻿  6.2.c
+c:\users\dror\desktop\college\mission6c\mission6c\6.2.c(6): warning C4013: 'scanf' undefined; assuming extern returning int
+c:\users\dror\desktop\college\mission6c\mission6c\6.2.c(7): warning C4013: 'printf' undefined; assuming extern returning int
+c:\users\dror\desktop\college\mission6c\mission6c\6.2.c(7): warning C4013: 'OddAndEvenSum' undefined; assuming extern returning int
+  6.3.c
+c:\users\dror\desktop\college\mission6c\mission6c\6.3.c(8): warning C4013: 'scanf' undefined; assuming extern returning int
+c:\users\dror\desktop\college\mission6c\mission6c\6.3.c(9): warning C4013: 'printf' undefined; assuming extern returning int
+c:\users\dror\desktop\college\mission6c\mission6c\6.3.c(9): warning C4013: 'ToDecimal' undefined; assuming extern returning int
+  Generating Code...
+  Mission6C.vcxproj -> C:\Users\dror\Desktop\college\Mission6C\Debug\Mission6C.exe
