@@ -2,6 +2,24 @@
 
 #include "DrorGeneral.h"
 
+//--------------------------------------------------------------------------------------------
+//											Bulls And Cows
+//										  ----------------
+//
+// General : The program is the game Bulls And Cows.
+//
+// Input   : None
+//
+// Process : The program get guesses from the players, let them know how close were they to
+//			 the answer and they keep going untill it's done.
+//
+// Output  : The proccess of the game, who is the winner.
+//
+//--------------------------------------------------------------------------------------------
+// Programmer : Dror Tal
+// Student No : 322534793
+// Date       : 15.10.2019
+//--------------------------------------------------------------------------------------------
 void main(void)
 {
 	// Variable definition
@@ -92,7 +110,6 @@ void CheckHits(unsigned short playerNumber, unsigned short guess, unsigned short
 // Return Value : None.
 //
 //--------------------------------------------------------------------------------------------
-
 void CheckKliaa(unsigned short playerNumber, unsigned short guess, unsigned short hits[])
 {
 	// Variable definition
