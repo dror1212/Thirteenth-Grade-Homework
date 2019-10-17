@@ -20,14 +20,14 @@
 // Student No : 322534793
 // Date       : 15.10.2019
 //--------------------------------------------------------------------------------------------
-void main2(void)
+void main(void)
 {
 	// Variable definition
 	unsigned short players[TWO] = { 1234, 5679 };
 	unsigned short turn = ONE;
 	unsigned short guess;
 	unsigned short turnsToWin = ZERO;
-	unsigned short hits[FOUR] = { ZERO };
+	unsigned short hits[TEN] = { ZERO };
 	unsigned short amountOfHits = ZERO;
 	unsigned short amountOfKliaa;
 	enum BOOLEAN goOn = TRUE;
@@ -36,7 +36,7 @@ void main2(void)
 	while (amountOfHits < FOUR)
 	{
 		// Empty the vector
-		EmptyAVector(hits, FOUR);
+		EmptyAVector(hits, TEN);
 
 		// Change to the other player turn
 		turn = !turn;
@@ -56,12 +56,14 @@ void main2(void)
 		turnsToWin += (!turn);
 
 		// Calculate the hits and kliaas
-		CheckHits(players[!turn], guess, hits);
-		CheckKliaa(players[!turn], guess, hits);
+		CountAmmountOfNumbers(players[!turn], hits);
+		CountAmmountOfNumbers(guess, hits);
 
-		// Count the hits and kliaas
-		amountOfHits = SumOfDigits(hits, FOUR, ONE);
-		amountOfKliaa = SumOfDigits(hits, FOUR, TEN);
+		// Count the hits
+		amountOfHits = CheckHit(players[!turn], guess, hits);
+
+		// Count the kliaas
+		amountOfKliaa = CheckKliaas(hits);
 
 		printf("Player %hu hit %hu times and kala %hu times\n", turn + ONE, amountOfHits, amountOfKliaa);
 	}
@@ -81,18 +83,45 @@ void main2(void)
 //			guess - The guess of the player
 //			hits - The vector where the info is saved
 //
-// Return Value : None.
+// Return Value : The amount of hits.
 //
 //--------------------------------------------------------------------------------------------
-void CheckHits(unsigned short playerNumber, unsigned short guess, unsigned short hits[])
+unsigned short CheckHit(unsigned short playerNumber, unsigned short guess, unsigned short hits[])
 {
 	// Variable definition
 	unsigned short counter = ZERO;
-
+	unsigned short amountOfHits = ZERO;
 	// Check if there is a hit
 	for (; playerNumber + guess; playerNumber /= TEN, guess /= TEN, counter++)
 	{
-		hits[counter] = (playerNumber % TEN == guess % TEN) ? ONE : ZERO;
+		if (playerNumber % TEN == guess % TEN)
+		{
+			amountOfHits += ONE;
+			hits[guess % TEN] = ZERO;
+		}
+	}
+	return (amountOfHits);
+}
+
+//--------------------------------------------------------------------------------------------
+//									Count how mant time a digit exist
+//								-----------------------------------------
+//
+// General		: The function gets a number and count how many times it exist.
+//
+// Parameters   :
+//			number - The number
+//			hits - The vector where the info is saved
+//
+// Return Value : None.
+//
+//--------------------------------------------------------------------------------------------
+void CountAmmountOfNumbers(unsigned short number, unsigned short hits[])
+{
+	// Go on all the values in the vector
+	for (number; number; number /= TEN)
+	{
+		hits[number % TEN]++;
 	}
 }
 
@@ -100,31 +129,50 @@ void CheckHits(unsigned short playerNumber, unsigned short guess, unsigned short
 //											Check Kliaa
 //										------------------
 //
-// General		: The function gets the guess and the numbers, check if there are any kliaas.
+// General		: The function gets the vector and check if there are kliaas.
 //
 // Parameters   :
-//			playerNumber - The number of the other player
-//			guess - The guess of the player
-//			hits - The vector where the info is saved
+//			hits - The vector where to count from
+//
+// Return Value : The amount of kliaas.
+//
+//--------------------------------------------------------------------------------------------
+unsigned short CheckKliaas(unsigned short hits[])
+{
+	// Variable definition
+	unsigned short counter;
+	unsigned short amountOfKliaa = ZERO;
+
+	// Check if there is a kliaa
+	for (counter = ZERO; TEN - counter; counter++)
+	{
+		amountOfKliaa += (hits[counter] >= TWO) ? ONE : ZERO;
+	}
+
+	return (amountOfKliaa);
+}
+
+//--------------------------------------------------------------------------------------------
+//											Num Of Digits
+//										  -----------------
+//
+// General		: The function gets a number and checks what is his length.
+//
+// Parameters   :
+//			number - The number
 //
 // Return Value : None.
 //
 //--------------------------------------------------------------------------------------------
-void CheckKliaa(unsigned short playerNumber, unsigned short guess, unsigned short hits[])
+unsigned int NumOfDigits(unsigned int number)
 {
 	// Variable definition
-	unsigned short counter;
-	unsigned short secondCounter;
-	unsigned short numberHolder;
+	unsigned int counter = ZERO;
 
-	// Check if there is a kliaa
-	for (counter = ZERO; guess; counter++, guess /= TEN)
-	{
-		for (numberHolder = playerNumber, secondCounter = ZERO; numberHolder; secondCounter++, numberHolder /= TEN)
-		{
-			hits[counter] += ((numberHolder % TEN == guess % TEN) * (!hits[secondCounter])) ? TEN : ZERO;
-		}
-	}
+	// Go on all the values in the vector
+	for (; number; number /= TEN + counter++ * ZERO) {}
+
+	return (counter);
 }
 
 //--------------------------------------------------------------------------------------------
@@ -147,34 +195,4 @@ void EmptyAVector(int vec[], int length)
 	{
 		vec[length] = ZERO;
 	}
-}
-
-//--------------------------------------------------------------------------------------------
-//											Sum Of Digits
-//										  -----------------
-//
-// General		: The function gets a vector and a place to take the digits from.
-//
-// Parameters   :
-//			vec - The vector
-//			length - The length of the vector
-//			digits - What digit to take (first, second, third and more)
-//
-// Return Value : None.
-//
-//--------------------------------------------------------------------------------------------
-unsigned short SumOfDigits(unsigned short check[], unsigned short length, unsigned int digits)
-{
-	// Variable definition
-	unsigned short counter = ZERO;
-	unsigned int temp;
-
-	// Go on all the values in the vector
-	for (int i = ZERO; i < length; i++)
-	{
-		// Take the sum of a specific digits
-		temp = check[i] % (digits * TEN) / digits;
-		counter += temp;
-	}
-	return (counter);
 }

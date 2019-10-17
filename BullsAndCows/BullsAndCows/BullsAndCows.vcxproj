@@ -120,6 +120,7 @@
   <ItemGroup>
     <ClCompile Include="Main.c" />
     <ClCompile Include="Functions.c" />
+    <ClCompile Include="MainV2.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
