@@ -30,11 +30,16 @@ void main(void)
 	unsigned short hits[TEN] = { ZERO };
 	unsigned short amountOfHits = ZERO;
 	unsigned short amountOfKliaa;
+	unsigned short temp;
+	unsigned short temp2;
+	unsigned short counter;
 	enum BOOLEAN goOn = TRUE;
 
 	// Go until someone guess correctly
 	while (amountOfHits < FOUR)
 	{
+		amountOfHits = ZERO;
+		amountOfKliaa = ZERO;
 		// Empty the vector
 		EmptyAVector(hits, TEN);
 
@@ -57,7 +62,21 @@ void main(void)
 
 		// Calculate the hits and kliaas
 		CountAmmountOfNumbers(players[!turn], hits);
-		CountAmmountOfNumbers(players[!turn], guess);
+		CountAmmountOfNumbers(guess, hits);
+
+		for (temp = players[!turn], temp2 = guess; temp + temp2; temp /= TEN, temp2 /= TEN)
+		{
+			if (temp % TEN == temp2 % TEN)
+			{
+				amountOfHits += ONE;
+				hits[temp % TEN] -= TWO;
+			}
+		}
+
+		for (counter = ZERO; counter < TEN; counter++)
+		{
+			amountOfKliaa += (hits[counter] >= TWO) ? ONE : ZERO;
+		}
 
 		printf("Player %hu hit %hu times and kala %hu times\n", turn + ONE, amountOfHits, amountOfKliaa);
 	}
@@ -66,28 +85,10 @@ void main(void)
 	scanf("%hu", &guess);
 }
 
-//--------------------------------------------------------------------------------------------
-//											Check Hits
-//										------------------
-//
-// General		: The function gets the guess and the numbers, check if there are any hits.
-//
-// Parameters   :
-//			playerNumber - The offset of the other player
-//			guess - The guess of the player
-//			hits - The vector where the info is saved
-//
-// Return Value : None.
-//
-//--------------------------------------------------------------------------------------------
-void CheckHits(unsigned short playerNumber, unsigned short guess, unsigned short hits[])
+void CountAmmountOfNumbers(unsigned short number, unsigned short hits[])
 {
-	// Variable definition
-	unsigned short counter = ZERO;
-
-	// Check if there is a hit
-	for (; playerNumber + guess; playerNumber /= TEN, guess /= TEN, counter++)
+	for (number; number; number /= TEN)
 	{
-		hits[counter] = (playerNumber % TEN == guess % TEN) ? ONE : ZERO;
+		hits[number % TEN]++;
 	}
 }

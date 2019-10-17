@@ -20,7 +20,7 @@
 // Student No : 322534793
 // Date       : 15.10.2019
 //--------------------------------------------------------------------------------------------
-void main(void)
+void main2(void)
 {
 	// Variable definition
 	unsigned short players[TWO] = { 1234, 5679 };
