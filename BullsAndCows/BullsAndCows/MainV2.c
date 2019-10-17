@@ -92,3 +92,19 @@ void CountAmmountOfNumbers(unsigned short number, unsigned short hits[])
 		hits[number % TEN]++;
 	}
 }
+
+unsigned int NumOfDigits(unsigned int number)
+{
+	unsigned int counter = ZERO;
+	for (; number; number /= TEN + counter++ * ZERO) {}
+
+	return (counter);
+}
+
+void EmptyAVector(int vec[], int length)
+{
+	for (length--; length > -ONE; length--)
+	{
+		vec[length] = ZERO;
+	}
+}
