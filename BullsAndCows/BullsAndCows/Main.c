@@ -77,7 +77,7 @@ void main2(void)
 // General		: The function gets the guess and the numbers, check if there are any hits.
 //
 // Parameters   :
-//			playerNumber - The offset of the other player
+//			playerNumber - The number of the other player
 //			guess - The guess of the player
 //			hits - The vector where the info is saved
 //
@@ -103,7 +103,7 @@ void CheckHits(unsigned short playerNumber, unsigned short guess, unsigned short
 // General		: The function gets the guess and the numbers, check if there are any kliaas.
 //
 // Parameters   :
-//			playerNumber - The offset of the other player
+//			playerNumber - The number of the other player
 //			guess - The guess of the player
 //			hits - The vector where the info is saved
 //

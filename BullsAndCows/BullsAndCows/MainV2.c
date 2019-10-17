@@ -30,16 +30,11 @@ void main(void)
 	unsigned short hits[TEN] = { ZERO };
 	unsigned short amountOfHits = ZERO;
 	unsigned short amountOfKliaa;
-	unsigned short temp;
-	unsigned short temp2;
-	unsigned short counter;
 	enum BOOLEAN goOn = TRUE;
 
 	// Go until someone guess correctly
 	while (amountOfHits < FOUR)
 	{
-		amountOfHits = ZERO;
-		amountOfKliaa = ZERO;
 		// Empty the vector
 		EmptyAVector(hits, TEN);
 
@@ -64,19 +59,11 @@ void main(void)
 		CountAmmountOfNumbers(players[!turn], hits);
 		CountAmmountOfNumbers(guess, hits);
 
-		for (temp = players[!turn], temp2 = guess; temp + temp2; temp /= TEN, temp2 /= TEN)
-		{
-			if (temp % TEN == temp2 % TEN)
-			{
-				amountOfHits += ONE;
-				hits[temp % TEN] -= TWO;
-			}
-		}
+		// Count the hits
+		amountOfHits = CheckHit(players[!turn], guess, hits);
 
-		for (counter = ZERO; counter < TEN; counter++)
-		{
-			amountOfKliaa += (hits[counter] >= TWO) ? ONE : ZERO;
-		}
+		// Count the kliaas
+		amountOfKliaa = CheckKliaas(hits);
 
 		printf("Player %hu hit %hu times and kala %hu times\n", turn + ONE, amountOfHits, amountOfKliaa);
 	}
@@ -85,24 +72,125 @@ void main(void)
 	scanf("%hu", &guess);
 }
 
+//--------------------------------------------------------------------------------------------
+//											Check Hits
+//										------------------
+//
+// General		: The function gets the guess and the numbers, check if there are any hits.
+//
+// Parameters   :
+//			playerNumber - The number of the other player
+//			guess - The guess of the player
+//			hits - The vector where the info is saved
+//
+// Return Value : The amount of hits.
+//
+//--------------------------------------------------------------------------------------------
+unsigned short CheckHit(unsigned short playerNumber, unsigned short guess, unsigned short hits[])
+{
+	// Variable definition
+	unsigned short counter = ZERO;
+	unsigned short amountOfHits = ZERO;
+	// Check if there is a hit
+	for (; playerNumber + guess; playerNumber /= TEN, guess /= TEN, counter++)
+	{
+		if (playerNumber % TEN == guess % TEN)
+		{
+			amountOfHits += ONE;
+			hits[guess % TEN] = ZERO;
+		}
+	}
+	return (amountOfHits);
+}
+
+//--------------------------------------------------------------------------------------------
+//									Count how mant time a digit exist
+//								-----------------------------------------
+//
+// General		: The function gets a number and count how many times it exist.
+//
+// Parameters   :
+//			number - The number
+//			hits - The vector where the info is saved
+//
+// Return Value : None.
+//
+//--------------------------------------------------------------------------------------------
 void CountAmmountOfNumbers(unsigned short number, unsigned short hits[])
 {
+	// Go on all the values in the vector
 	for (number; number; number /= TEN)
 	{
 		hits[number % TEN]++;
 	}
 }
 
+//--------------------------------------------------------------------------------------------
+//											Check Kliaa
+//										------------------
+//
+// General		: The function gets the vector and check if there are kliaas.
+//
+// Parameters   :
+//			hits - The vector where to count from
+//
+// Return Value : The amount of kliaas.
+//
+//--------------------------------------------------------------------------------------------
+unsigned short CheckKliaas(unsigned short hits[])
+{
+	// Variable definition
+	unsigned short counter;
+	unsigned short amountOfKliaa = ZERO;
+
+	// Check if there is a kliaa
+	for (counter = ZERO; TEN - counter; counter++)
+	{
+		amountOfKliaa += (hits[counter] >= TWO) ? ONE : ZERO;
+	}
+
+	return (amountOfKliaa);
+}
+
+//--------------------------------------------------------------------------------------------
+//											Num Of Digits
+//										  -----------------
+//
+// General		: The function gets a number and checks what is his length.
+//
+// Parameters   :
+//			number - The number
+//
+// Return Value : None.
+//
+//--------------------------------------------------------------------------------------------
 unsigned int NumOfDigits(unsigned int number)
 {
+	// Variable definition
 	unsigned int counter = ZERO;
+
+	// Go on all the values in the vector
 	for (; number; number /= TEN + counter++ * ZERO) {}
 
 	return (counter);
 }
 
+//--------------------------------------------------------------------------------------------
+//											Empty Vector
+//										  ----------------
+//
+// General		: The function gets a vector and empty it.
+//
+// Parameters   :
+//			vec - The vector
+//			length - The length of the vector
+//
+// Return Value : None.
+//
+//--------------------------------------------------------------------------------------------
 void EmptyAVector(int vec[], int length)
 {
+	// Go on all the values in the vector
 	for (length--; length > -ONE; length--)
 	{
 		vec[length] = ZERO;
