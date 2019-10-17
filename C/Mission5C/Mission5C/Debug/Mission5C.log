@@ -1,0 +1,3 @@
+﻿  5.2.c
+c:\users\dror\desktop\מכללה\mission5c\mission5c\5.2.c(70): warning C4244: '=': conversion from 'unsigned __int64' to 'unsigned int', possible loss of data
+  Mission5C.vcxproj -> C:\Users\dror\Desktop\מכללה\Mission5C\Debug\Mission5C.exe
