@@ -1,6 +1,0 @@
-﻿  4.1.3.c
-  4.2.7.c
-c:\users\dror\desktop\מכללה\mission4c\mission4c\4.2.7.c(56): warning C4477: 'scanf' : format string '%d' requires an argument of type 'int *', but variadic argument 1 has type 'char *'
-  c:\users\dror\desktop\מכללה\mission4c\mission4c\4.2.7.c(56): note: consider using '%hhd' in the format string
-  Generating Code...
-  Mission4C.vcxproj -> C:\Users\dror\Desktop\מכללה\Mission4C\Debug\Mission4C.exe
