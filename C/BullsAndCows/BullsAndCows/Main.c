@@ -20,17 +20,25 @@
 // Student No : 322534793
 // Date       : 15.10.2019
 //--------------------------------------------------------------------------------------------
-void main2(void)
+void main1(void)
 {
 	// Variable definition
-	unsigned short players[TWO] = { 1234, 5679 };
-	unsigned short turn = ONE;
+	unsigned short players[TWO] = {ZERO};
+	unsigned short turn = ZERO;
 	unsigned short guess;
 	unsigned short turnsToWin = ZERO;
 	unsigned short hits[FOUR] = { ZERO };
 	unsigned short amountOfHits = ZERO;
 	unsigned short amountOfKliaa;
 	enum BOOLEAN goOn = TRUE;
+
+	// Get the two numbers of the users
+	for (turn = ZERO; TWO - turn; turn++)
+	{
+		printf("Player %hu what is your number?\n", turn + 1);
+		scanf("%hu", &players[turn]);
+	}
+	turn--;
 
 	// Go until someone guess correctly
 	while (amountOfHits < FOUR)
@@ -48,7 +56,7 @@ void main2(void)
 			scanf("%hu", &guess);
 
 			// Check if the number is valid (four digits long)
-			(NumOfDigits(guess) == FOUR) ? (goOn = FALSE) : (goOn = TRUE);
+			goOn = (NumOfDigits(guess) == FOUR) ? FALSE : goOn;
 		}
 		goOn = TRUE;
 
@@ -125,56 +133,4 @@ void CheckKliaa(unsigned short playerNumber, unsigned short guess, unsigned shor
 			hits[counter] += ((numberHolder % TEN == guess % TEN) * (!hits[secondCounter])) ? TEN : ZERO;
 		}
 	}
-}
-
-//--------------------------------------------------------------------------------------------
-//											Empty Vector
-//										  ----------------
-//
-// General		: The function gets a vector and empty it.
-//
-// Parameters   :
-//			vec - The vector
-//			length - The length of the vector
-//
-// Return Value : None.
-//
-//--------------------------------------------------------------------------------------------
-void EmptyAVector(int vec[], int length)
-{
-	// Go on all the values in the vector
-	for (length--; length > -ONE; length--)
-	{
-		vec[length] = ZERO;
-	}
-}
-
-//--------------------------------------------------------------------------------------------
-//											Sum Of Digits
-//										  -----------------
-//
-// General		: The function gets a vector and a place to take the digits from.
-//
-// Parameters   :
-//			vec - The vector
-//			length - The length of the vector
-//			digits - What digit to take (first, second, third and more)
-//
-// Return Value : None.
-//
-//--------------------------------------------------------------------------------------------
-unsigned short SumOfDigits(unsigned short check[], unsigned short length, unsigned int digits)
-{
-	// Variable definition
-	unsigned short counter = ZERO;
-	unsigned int temp;
-
-	// Go on all the values in the vector
-	for (int i = ZERO; i < length; i++)
-	{
-		// Take the sum of a specific digits
-		temp = check[i] % (digits * TEN) / digits;
-		counter += temp;
-	}
-	return (counter);
 }

@@ -1,4 +1,4 @@
 ﻿  MainV2.c
-c:\users\dror\desktop\new folder (3)\thirteenth-grade-homework\bullsandcows\bullsandcows\drorgeneral.h(29): warning C4091: 'typedef ': ignored on left of 'BOOLEAN' when no variable is declared
-c:\users\dror\desktop\new folder (3)\thirteenth-grade-homework\bullsandcows\bullsandcows\mainv2.c(39): warning C4133: 'function': incompatible types - from 'unsigned short [10]' to 'int *'
-  BullsAndCows.vcxproj -> C:\Users\dror\Desktop\New folder (3)\Thirteenth-Grade-Homework\BullsAndCows\x64\Debug\BullsAndCows.exe
+c:\users\dror\desktop\new folder (5)\thirteenth-grade-homework\c\bullsandcows\bullsandcows\drorgeneral.h(12): warning C4091: 'typedef ': ignored on left of 'BOOLEAN' when no variable is declared
+c:\users\dror\desktop\new folder (5)\thirteenth-grade-homework\c\bullsandcows\bullsandcows\mainv2.c(47): warning C4133: 'function': incompatible types - from 'unsigned short [10]' to 'int *'
+  BullsAndCows.vcxproj -> C:\Users\dror\Desktop\New folder (5)\Thirteenth-Grade-Homework\C\BullsAndCows\x64\Debug\BullsAndCows.exe

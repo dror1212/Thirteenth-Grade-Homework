@@ -21,7 +21,6 @@ unsigned int DifInTime(unsigned int firstDate, unsigned int secondDate)
 	unsigned int difMonth;
 	unsigned int difDays;
 	int timeInDays;
-	unsigned int temp;
 	unsigned int date;
 
 	// Calculate all the days
@@ -328,7 +327,7 @@ unsigned long long Shirshur2(unsigned long long firstNumber, unsigned long long 
 {
 	unsigned long long newNumber = ZERO;
 	unsigned int power = NumOfDigits((int)secondNumber);
-	newNumber = firstNumber * Power(TEN, power); +secondNumber;
+	newNumber = firstNumber * Power(TEN, power) + secondNumber;
 	return (newNumber);
 }
 
@@ -365,6 +364,70 @@ double Power(double number, double power)
 	return (retValue);
 }
 
+double KefelByTen(double number)
+{
+	double retValue = ZERO;
+	for (int i = ZERO; i < TEN; i++)
+	{
+		retValue += number;
+	}
+	return (retValue);
+}
+
+double DivideByTen(double number)
+{
+	//black box
+	return (number / TEN);
+}
+
+double Kefel(double number, double secNumber)
+{
+	enum BOOLEAN check = (secNumber == ABSOLUTE(secNumber));
+	secNumber = ABSOLUTE(secNumber);
+	double retValue = ZERO;
+	double help = ZERO;
+	int help2;
+	int help5;
+	unsigned short help3;
+	unsigned int help4 = ONE;
+	unsigned short counter = ZERO;
+	unsigned int intKefel = (int)secNumber;
+	double less = secNumber - (double)intKefel;
+
+	for (; intKefel; intKefel--)
+	{
+		retValue += number;
+	}
+
+	help3 = less > ZERO;
+	for (; help3; less = KefelByTen(less))
+	{
+		help2 = (int)less;
+		help2 += (less > NINE) ? ONE : ZERO;
+		help3 = less > help2;
+		counter += help3;
+	}
+
+	for (; counter; counter--)
+	{
+		help5 = help4;
+		help4 = ZERO;
+		for (int i = 0; (help5 - i); i++)
+		{
+			help4 += TEN;
+		}
+	}
+	for (; help2; help2--)
+	{
+		help += number;
+	}
+
+	//ChangeToHiluk
+	retValue += help / help4;
+	retValue = (check) ? retValue : -retValue;
+	return (retValue);
+}
+
 unsigned short Sum(unsigned short check[])
 {
 	unsigned short counter = 0;
@@ -375,10 +438,34 @@ unsigned short Sum(unsigned short check[])
 	return (counter);
 }
 
+unsigned short SumOfDigits(unsigned short check[], unsigned short length, unsigned int digits)
+{
+	unsigned short counter = ZERO;
+	unsigned int temp;
+	for (int i = ZERO; i < length; i++)
+	{
+		temp = check[i] % (digits * TEN) / digits;
+		counter += temp;
+	}
+	return (counter);
+}
+
+unsigned short CountSpecificDigits(unsigned short check[], unsigned short length, unsigned int digits)
+{
+	unsigned short counter = ZERO;
+	unsigned int temp;
+	for (int i = ZERO; i < length; i++)
+	{
+		temp = (check[i] % (digits * TEN) / digits != ZERO) ? ONE : ZERO;
+		counter += temp;
+	}
+	return (counter);
+}
+
 unsigned short CountNotZeros(unsigned short check[], unsigned short length)
 {
 	unsigned short counter = ZERO;
-	for (int i = ZERO; i < length + 1; i++)
+	for (int i = ZERO; i < length; i++)
 	{
 		counter += (check[i] != ZERO);
 	}
@@ -457,6 +544,14 @@ void VectorDifference(int vec[], int value, int difference[])
 {
 	int counter = ZERO;
 	for(; counter < LENGTH_OF_VECTOR; difference[counter] = ABSOLUTE(vec[counter] - value) + counter++ * ZERO) {}
+}
+
+void EmptyAVector(int vec[], int length)
+{
+	for (length--; length > -ONE; length--)
+	{
+		vec[length] = ZERO;
+	}
 }
 
 float Average(int vec[])

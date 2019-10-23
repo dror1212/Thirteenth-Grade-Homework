@@ -23,7 +23,7 @@
 void main(void)
 {
 	// Variable definition
-	unsigned short players[TWO] = { 1234, 5679 };
+	unsigned short players[TWO] = {ZERO};
 	unsigned short turn = ONE;
 	unsigned short guess;
 	unsigned short turnsToWin = ZERO;
@@ -31,6 +31,21 @@ void main(void)
 	unsigned short amountOfHits = ZERO;
 	unsigned short amountOfKliaa;
 	enum BOOLEAN goOn = TRUE;
+
+	// Get the two numbers of the users
+	for (turn = ZERO; TWO - turn; turn++)
+	{
+		while (goOn)
+		{
+			printf("Player %hu what is your number?\n", turn + ONE);
+			scanf("%hu", &players[turn]);
+			goOn = (NumOfDigits(guess) == FOUR) ? FALSE : goOn;
+
+		}
+		goOn = TRUE;
+	}
+	turn--;
+	goOn = TRUE;
 
 	// Go until someone guess correctly
 	while (amountOfHits < FOUR)
@@ -48,7 +63,7 @@ void main(void)
 			scanf("%hu", &guess);
 
 			// Check if the number is valid (four digits long)
-			(NumOfDigits(guess) == FOUR) ? (goOn = FALSE) : (goOn = TRUE);
+			goOn = (NumOfDigits(guess) == FOUR) ? FALSE : goOn;
 		}
 		goOn = TRUE;
 
@@ -150,49 +165,4 @@ unsigned short CheckKliaas(unsigned short hits[])
 	}
 
 	return (amountOfKliaa);
-}
-
-//--------------------------------------------------------------------------------------------
-//											Num Of Digits
-//										  -----------------
-//
-// General		: The function gets a number and checks what is his length.
-//
-// Parameters   :
-//			number - The number
-//
-// Return Value : None.
-//
-//--------------------------------------------------------------------------------------------
-unsigned int NumOfDigits(unsigned int number)
-{
-	// Variable definition
-	unsigned int counter = ZERO;
-
-	// Go on all the values in the vector
-	for (; number; number /= TEN + counter++ * ZERO) {}
-
-	return (counter);
-}
-
-//--------------------------------------------------------------------------------------------
-//											Empty Vector
-//										  ----------------
-//
-// General		: The function gets a vector and empty it.
-//
-// Parameters   :
-//			vec - The vector
-//			length - The length of the vector
-//
-// Return Value : None.
-//
-//--------------------------------------------------------------------------------------------
-void EmptyAVector(int vec[], int length)
-{
-	// Go on all the values in the vector
-	for (length--; length > -ONE; length--)
-	{
-		vec[length] = ZERO;
-	}
 }

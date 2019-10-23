@@ -17,6 +17,7 @@
 #define FOUR 4
 #define SIX 6
 #define TWENTY 20
+#define NINE 9
 
 #define ABSOLUTE(a)(((a) < 0) ? -(a) : (a))
 #define IS_ODD(a)((a) % TWO)
@@ -76,6 +77,24 @@ int MaxInVector(int [], unsigned int);
 int MinInVector(int [], unsigned int);
 
 void VectorDifference(int [], int, int []);
+
+unsigned short SumOfDigits(unsigned short [], unsigned short, unsigned int);
+
+unsigned short CountSpecificDigits(unsigned short [], unsigned short, unsigned int);
+
+double Kefel(double, double );
+
+void EmptyAVector(int [], int);
+
+void CheckHits(unsigned short, unsigned short, unsigned short []);
+
+unsigned short CheckHit(unsigned short, unsigned short, unsigned short[]);
+
+void CheckKliaa(unsigned short, unsigned short, unsigned short []);
+
+void CountAmmountOfNumbers(unsigned short, unsigned short []);
+
+unsigned short CheckKliaas(unsigned short []);
 
 float Average(int[]);
 
