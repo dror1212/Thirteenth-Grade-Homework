@@ -86,16 +86,6 @@ double Kefel(double, double );
 
 void EmptyAVector(int [], int);
 
-void CheckHits(unsigned short, unsigned short, unsigned short []);
-
-unsigned short CheckHit(unsigned short, unsigned short, unsigned short[]);
-
-void CheckKliaa(unsigned short, unsigned short, unsigned short []);
-
-void CountAmmountOfNumbers(unsigned short, unsigned short []);
-
-unsigned short CheckKliaas(unsigned short []);
-
 float Average(int[]);
 
 unsigned short CountBigger(int[], int);
