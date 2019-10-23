@@ -76,3 +76,7 @@ int MaxInVector(int [], unsigned int);
 int MinInVector(int [], unsigned int);
 
 void VectorDifference(int [], int, int []);
+
+float Average(int[]);
+
+unsigned short CountBigger(int[], int);

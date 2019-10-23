@@ -4,51 +4,54 @@
 
 void main6A(void)
 {
+	// Variable definition
 	unsigned short precent[LENGTH_OF_VECTOR]; //40
 	unsigned short counter;
 	unsigned short sum = ZERO;
-	float memuza;
-	unsigned short moreThanMemuza = ZERO;
+	float average;
+	unsigned short moreThanAverage = ZERO;
+
 	printf("Give the numbers\n");
+
+	// Get fourty numbers
 	for (counter = ZERO; counter < LENGTH_OF_VECTOR; counter++)
 	{
 		scanf("%hu", &precent[counter]);
 	}
 
-	for (counter = LENGTH_OF_VECTOR - ONE; counter; counter--)
-	{
-		sum += precent[counter];
-	}
-	printf("%hu\n", sum);
+	// Calculate the average of the numbers
+	average = Average(precent);
 
-	memuza = (float)sum / LENGTH_OF_VECTOR;
+	printf("%f\n", average);
 
-	printf("%f\n", memuza);
+	// Count how many there are that are bigger than the average
+	moreThanAverage = CountBigger(precent, average);
 
-	for (counter = LENGTH_OF_VECTOR - ONE; counter; counter--)
-	{
-		moreThanMemuza += (precent[counter] > memuza) ? ONE : ZERO;
-	}
-
-	printf("Result: %hu", moreThanMemuza);
+	printf("Result: %hu", moreThanAverage);
 
 	scanf("%hu", &counter);
 }
 
 void main6B(void)
 {
+	// Variable definition
 	unsigned short precent[LENGTH_OF_VECTOR]; //40
 	unsigned short counter;
 	unsigned short sum = ZERO;
+	unsigned short moreThanTwenty = ZERO;
+
 	printf("Give the numbers\n");
+
+	// Get fourty numbers
 	for (counter = ZERO; counter < LENGTH_OF_VECTOR; counter++)
 	{
 		scanf("%hu", &precent[counter]);
 	}
 
-	for (counter = ZERO; LENGTH_OF_VECTOR - ONE - counter; counter++){}
+	// Count how many are bigger than twenty
+	moreThanTwenty = CountBigger(precent, TWENTY);
 
-	printf("Result: %hu", counter);
+	printf("Result: %hu", moreThanTwenty);
 
 	scanf("%hu", &counter);
 }
