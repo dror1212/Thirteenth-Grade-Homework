@@ -3,59 +3,6 @@
 #include "DrorGeneral.h"
 
 //--------------------------------------------------------------------------------------------
-//											Num Of Digits
-//										  -----------------
-//
-// General		: The function gets a number and checks what is his length.
-//
-// Parameters   :
-//			number - The number
-//
-// Return Value : None.
-//
-//--------------------------------------------------------------------------------------------
-unsigned int NumOfDigits(unsigned int number)
-{
-	// Variable definition
-	unsigned int counter = ZERO;
-
-	// Go on all the values in the vector
-	for (; number; number /= TEN + counter++ * ZERO) {}
-
-	return (counter);
-}
-
-//--------------------------------------------------------------------------------------------
-//											Sum Of Digits
-//										  -----------------
-//
-// General		: The function gets a vector and a place to take the digits from.
-//
-// Parameters   :
-//			vec - The vector
-//			length - The length of the vector
-//			digits - What digit to take (first, second, third and more)
-//
-// Return Value : None.
-//
-//--------------------------------------------------------------------------------------------
-unsigned short SumOfDigits(unsigned short check[], unsigned short length, unsigned int digits)
-{
-	// Variable definition
-	unsigned short counter = ZERO;
-	unsigned int temp;
-
-	// Go on all the values in the vector
-	for (int i = ZERO; i < length; i++)
-	{
-		// Take the sum of a specific digits
-		temp = check[i] % (digits * TEN) / digits;
-		counter += temp;
-	}
-	return (counter);
-}
-
-//--------------------------------------------------------------------------------------------
 //											Empty Vector
 //										  ----------------
 //
@@ -71,8 +18,85 @@ unsigned short SumOfDigits(unsigned short check[], unsigned short length, unsign
 void EmptyAVector(int vec[], int length)
 {
 	// Go on all the values in the vector
-	for (length--; length > - ONE; length--)
+	for (length--; length > - ONE; vec[length--] = ZERO) {}
+}
+
+//--------------------------------------------------------------------------------------------
+//											Check Accurate Hits
+//										---------------------------
+//
+// General		: The function gets the guess and the numbers, check if there are any hits.
+//
+// Parameters   :
+//			playerNumber - The number of the other player
+//			guess - The guess of the player
+//			hits - The vector where the info is saved
+//
+// Return Value : The amount of accurate hits.
+//
+//--------------------------------------------------------------------------------------------
+unsigned short CheckAccurateHits(unsigned short playerNumber, unsigned short guess, unsigned short hits[])
+{
+	// Variable definition
+	unsigned short counter = ZERO;
+	unsigned short amountOfHits = ZERO;
+	// Check if there is a hit
+	for (; playerNumber + guess; playerNumber /= TEN, guess /= TEN, counter++)
 	{
-		vec[length] = ZERO;
+		if (playerNumber % TEN == guess % TEN)
+		{
+			amountOfHits += ONE;
+			hits[guess % TEN] = ZERO;
+		}
 	}
+	return (amountOfHits);
+}
+
+//--------------------------------------------------------------------------------------------
+//									Count how mant time a digit exist
+//								-----------------------------------------
+//
+// General		: The function gets a number and count how many times it exist.
+//
+// Parameters   :
+//			number - The number
+//			hits - The vector where the info is saved
+//
+// Return Value : None.
+//
+//--------------------------------------------------------------------------------------------
+void CountAmmountOfNumbers(unsigned short number, unsigned short hits[])
+{
+	// Go on all the values in the vector
+	for (number; number; number /= TEN)
+	{
+		hits[number % TEN]++;
+	}
+}
+
+//--------------------------------------------------------------------------------------------
+//											Check Hits
+//										------------------
+//
+// General		: The function gets the vector and check if there are hitss.
+//
+// Parameters   :
+//			hits - The vector where to count from
+//
+// Return Value : The amount of hits.
+//
+//--------------------------------------------------------------------------------------------
+unsigned short CheckHits(unsigned short hits[])
+{
+	// Variable definition
+	unsigned short counter;
+	unsigned short amountOfHits = ZERO;
+
+	// Check if there is a hits
+	for (counter = ZERO; TEN - counter; counter++)
+	{
+		amountOfHits += (hits[counter] >= TWO) ? ONE : ZERO;
+	}
+
+	return (amountOfHits);
 }

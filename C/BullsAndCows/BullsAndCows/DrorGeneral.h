@@ -8,21 +8,17 @@
 #define ONE 1
 #define FOUR 4
 #define TEN 10
-
-typedef enum BOOLEAN {FALSE, TRUE};
-
-unsigned int NumOfDigits(unsigned int);
-
-unsigned short SumOfDigits(unsigned short [], unsigned short, unsigned int);
+#define MAX_NUMBER 9999
+#define MIN_NUMBER 1000
+#define IS_VALID(num)(((num <= 9999) * (num >= 1000)))
+#define BOOLEAN unsigned short
+#define TRUE 1
+#define FALSE 0
 
 void EmptyAVector(int [], int);
 
-void CheckHits(unsigned short, unsigned short, unsigned short []);
-
-unsigned short CheckHit(unsigned short, unsigned short, unsigned short[]);
-
-void CheckKliaa(unsigned short, unsigned short, unsigned short []);
+unsigned short CheckAccurateHits(unsigned short, unsigned short, unsigned short[]);
 
 void CountAmmountOfNumbers(unsigned short, unsigned short []);
 
-unsigned short CheckKliaas(unsigned short []);
+unsigned short CheckHits(unsigned short []);
