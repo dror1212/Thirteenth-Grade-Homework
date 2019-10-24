@@ -2,6 +2,23 @@
 
 #include "DrorGeneral.h"
 
+//-----------------------------------------------------------------------------------------------
+//											Like The Last Neighords
+//										 -----------------------------
+//
+// General : The program checks where the player need to go.
+//
+// Input   : 25 numbers, the current place offset.
+//
+// Process : The program checks where the player need to go.
+//
+// Output  : Where the player will go depends on the cube number.
+//
+//-----------------------------------------------------------------------------------------------
+// Programmer : Dror Tal
+// Student No : 322534793
+// Date       : 17.10.2019
+//-----------------------------------------------------------------------------------------------
 void main5(void)
 {
 	// Variable definition

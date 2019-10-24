@@ -2,6 +2,23 @@
 
 #include "DrorGeneral.h"
 
+//--------------------------------------------------------------------------------------------
+//											Where can I move
+//										 ----------------------
+//
+// General : The program checks where the player can move and tells him.
+//
+// Input   : The boared status, the place of the player.
+//
+// Process : The program checks where the player can move and tells him.
+//
+// Output  : Prints where the player can go.
+//
+//--------------------------------------------------------------------------------------------
+// Programmer : Dror Tal
+// Student No : 322534793
+// Date       : 17.10.2019
+//--------------------------------------------------------------------------------------------
 void main2(void)
 {
 	// Variable definition

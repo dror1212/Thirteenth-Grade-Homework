@@ -2,6 +2,23 @@
 
 #include "DrorGeneral.h"
 
+//--------------------------------------------------------------------------------------------
+//											Are Neighords The Same
+//										 ----------------------------
+//
+// General : The program checks if there are any neighords that have the same value.
+//
+// Input   : 20 numbers.
+//
+// Process : The program checks if there are any neighords that have the same value.
+//
+// Output  : Prints the ammount of neighords that are the same.
+//
+//--------------------------------------------------------------------------------------------
+// Programmer : Dror Tal
+// Student No : 322534793
+// Date       : 17.10.2019
+//--------------------------------------------------------------------------------------------
 void main3(void)
 {
 	// Variable definition

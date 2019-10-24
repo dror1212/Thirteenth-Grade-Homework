@@ -2,6 +2,23 @@
 
 #include "DrorGeneral.h"
 
+//-----------------------------------------------------------------------------------------------
+//											More than the avarege
+//										 ---------------------------
+//
+// General : The program checks how many numbers are bigger than the avarege.
+//
+// Input   : 40 numbers.
+//
+// Process : The program checks how many numbers are bigger than the avarege.
+//
+// Output  : The amount of numbers that are bigger than the avarege.
+//
+//-----------------------------------------------------------------------------------------------
+// Programmer : Dror Tal
+// Student No : 322534793
+// Date       : 18.10.2019
+//-----------------------------------------------------------------------------------------------
 void main6A(void)
 {
 	// Variable definition
@@ -32,6 +49,23 @@ void main6A(void)
 	scanf("%hu", &counter);
 }
 
+//-----------------------------------------------------------------------------------------------
+//											More than the 20
+//										 ----------------------
+//
+// General : The program checks how many numbers are bigger than 20.
+//
+// Input   : 40 numbers.
+//
+// Process : The program checks how many numbers are bigger than 20.
+//
+// Output  : The amount of numbers that are bigger than 20.
+//
+//-----------------------------------------------------------------------------------------------
+// Programmer : Dror Tal
+// Student No : 322534793
+// Date       : 18.10.2019
+//-----------------------------------------------------------------------------------------------
 void main6B(void)
 {
 	// Variable definition
@@ -54,4 +88,54 @@ void main6B(void)
 	printf("Result: %hu", moreThanTwenty);
 
 	scanf("%hu", &counter);
+}
+
+//--------------------------------------------------------------------------------------------
+//											Average
+//										 --------------
+//
+// General		: The function calculates the average.
+//
+// Parameters   :
+//			vec  - The vector where the numbers are.
+//
+// Return Value : The average.
+//
+//--------------------------------------------------------------------------------------------
+float Average(int vec[])
+{
+	int ave = ZERO;
+	int counter;
+	int sum;
+	for (counter = LENGTH_OF_VECTOR - ONE; counter; counter--)
+	{
+		sum += vec[counter];
+	}
+
+	return ((float)sum / LENGTH_OF_VECTOR);
+}
+
+//--------------------------------------------------------------------------------------------
+//											Count Bigger
+//										 -----------------
+//
+// General		: The function count how many numbers are bigger than the given one in the vec.
+//
+// Parameters   :
+//			vec  - The vector where the numbers are.
+//			num  - The number.
+//
+// Return Value : How many numbers are bigger than num.
+//
+//--------------------------------------------------------------------------------------------
+unsigned short CountBigger(int vec[], int num)
+{
+	int counter;
+	int bigger = ZERO;
+	for (counter = LENGTH_OF_VECTOR - ONE; counter; counter--)
+	{
+		bigger += (vec[counter] > num) ? ONE : ZERO;
+	}
+
+	return (bigger);
 }

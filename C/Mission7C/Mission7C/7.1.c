@@ -2,6 +2,23 @@
 
 #include "DrorGeneral.h"
 
+//--------------------------------------------------------------------------------------------
+//											Is The Sum Exist
+//										 ----------------------
+//
+// General : The program checks if the given sum can be created with the numbers in the vec.
+//
+// Input   : N numbers and the number S that you need to find.
+//
+// Process : The program checks if the given sum can be created with the numbers in the vec.
+//
+// Output  : Prints the result.
+//
+//--------------------------------------------------------------------------------------------
+// Programmer : Dror Tal
+// Student No : 322534793
+// Date       : 17.10.2019
+//--------------------------------------------------------------------------------------------
 void main1(void)
 {
 	// Variable definition

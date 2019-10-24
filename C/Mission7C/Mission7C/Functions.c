@@ -553,28 +553,3 @@ void EmptyAVector(int vec[], int length)
 		vec[length] = ZERO;
 	}
 }
-
-float Average(int vec[])
-{
-	int ave = ZERO;
-	int counter;
-	int sum;
-	for (counter = LENGTH_OF_VECTOR - ONE; counter; counter--)
-	{
-		sum += vec[counter];
-	}
-
-	return ((float)sum / LENGTH_OF_VECTOR);
-}
-
-unsigned short CountBigger(int vec[], int num)
-{
-	int counter;
-	int bigger = ZERO;
-	for (counter = LENGTH_OF_VECTOR - ONE; counter; counter--)
-	{
-		bigger += (vec[counter] > num) ? ONE : ZERO;
-	}
-
-	return (bigger);
-}

@@ -2,6 +2,23 @@
 
 #include "DrorGeneral.h"
 
+//-----------------------------------------------------------------------------------------------
+//											Like The Last Neighords
+//										 -----------------------------
+//
+// General : The program checks if there are any neighords that have the same value as the last.
+//
+// Input   : 20 numbers.
+//
+// Process : The program checks if there are any neighords that have the same value as the last.
+//
+// Output  : Prints the ammount of neighords that are the same as the last.
+//
+//-----------------------------------------------------------------------------------------------
+// Programmer : Dror Tal
+// Student No : 322534793
+// Date       : 17.10.2019
+//-----------------------------------------------------------------------------------------------
 void main4(void)
 {
 	// Variable definition
