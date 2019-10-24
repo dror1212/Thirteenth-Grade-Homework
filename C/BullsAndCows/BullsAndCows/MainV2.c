@@ -27,9 +27,9 @@ void main(void)
 	unsigned short turn;
 	unsigned short guess;
 	unsigned short turnsToWin = ZERO;
-	unsigned short hits[TEN] = { ZERO };
 	unsigned short amountOfAccurateHits = ZERO;
 	unsigned short amountOfHits;
+	unsigned short hits[TEN] = { ZERO };
 	BOOLEAN goOn = TRUE;
 
 	// Get the two numbers of the users
@@ -65,7 +65,7 @@ void main(void)
 
 		// Count what turn is it
 		turnsToWin += !turn;
-
+		printf("turn : %hu\n", turnsToWin);
 		// Go untill the number is valid
 		while (goOn)
 		{

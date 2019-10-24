@@ -15,10 +15,10 @@
 // Return Value : None.
 //
 //--------------------------------------------------------------------------------------------
-void EmptyAVector(int vec[], int length)
+void EmptyAVector(unsigned short vec[], int length)
 {
 	// Go on all the values in the vector
-	for (length--; length > - ONE; vec[length--] = ZERO) {}
+	for (--length; length > - ONE; vec[length--] = ZERO) {}
 }
 
 //--------------------------------------------------------------------------------------------

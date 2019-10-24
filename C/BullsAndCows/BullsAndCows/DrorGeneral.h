@@ -15,7 +15,7 @@
 #define TRUE 1
 #define FALSE 0
 
-void EmptyAVector(int [], int);
+void EmptyAVector(unsigned short [], int);
 
 unsigned short CheckAccurateHits(unsigned short, unsigned short, unsigned short[]);
 
