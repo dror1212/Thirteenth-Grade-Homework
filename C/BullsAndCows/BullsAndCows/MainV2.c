@@ -8,12 +8,12 @@
 //
 // General : The program is the game Bulls And Cows.
 //
-// Input   : None
+// Input   : The numbers of the players and their guesses.
 //
 // Process : The program get guesses from the players, let them know how close were they to
 //			 the answer and they keep going untill it's done.
 //
-// Output  : The proccess of the game, who is the winner.
+// Output  : The proccess of the game, answer to their guesses, who is the winner.
 //
 //--------------------------------------------------------------------------------------------
 // Programmer : Dror Tal
