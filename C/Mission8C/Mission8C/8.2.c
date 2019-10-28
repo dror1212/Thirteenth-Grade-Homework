@@ -10,8 +10,8 @@ void main(void)
 	BOOLEAN check = FALSE;
 	for (counter = ZERO; counter < SEVEN*SEVEN; counter++)
 	{
-		mat[counter / SEVEN][counter % SEVEN] = counter + ONE + check * (SIX - counter % SEVEN);
-		check = (counter % SEVEN) ? check : !check;
+		check = ((counter % SEVEN) + (counter == ZERO)) ? check : !check;
+		mat[counter / SEVEN][counter % SEVEN] = counter + ONE + check * (SIX - (counter % SEVEN) * TWO);
 	}
 
 	printMatrix(mat, SEVEN);
