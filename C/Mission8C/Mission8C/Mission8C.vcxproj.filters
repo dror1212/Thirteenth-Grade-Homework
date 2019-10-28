@@ -38,5 +38,8 @@
     <ClCompile Include="8.2.1.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="8.3.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

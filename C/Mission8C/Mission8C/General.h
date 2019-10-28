@@ -8,8 +8,10 @@
 #define TWO 2
 #define FALSE 0
 #define SIX 6
+#define FIVE 5
 
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 
-void printMatrix(unsigned short [][SEVEN], unsigned short);
+void printMatrix(int[][SIX], unsigned int);
+
