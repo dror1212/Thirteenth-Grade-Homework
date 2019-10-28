@@ -19,7 +19,7 @@
 //	Student No : 322534793
 //	Date: 29.10.2019
 //-----------------------------------------------------------------------------------------------------------
-void main4(void)
+void main7(void)
 {
 	// Variable definition
 	unsigned short mat[SEVEN][SEVEN] = { ZERO };
