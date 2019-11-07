@@ -85,6 +85,24 @@ void Power(int * powerPtr, double * numberPtr, double * answer)
 	(*answer) = help;
 }
 
+//---------------------------------------------------------------------------------------
+//                                 		Concatenation
+//                                 		-------------
+//
+//     General 		: The function connect two numbers into one number.
+//
+//     Parameters 	:
+//         firstPtr			- number_pointer(In)
+//         secondPtr 		- number_pointer(In)
+//		   newNumberPtr 	- result pointer(In)
+//
+//     Return Value : None
+//
+//---------------------------------------------------------------------------------------
+// Programmer 	: Dror Tal
+// Student No 	: 322534793
+// date 		: 8.11.2019
+//---------------------------------------------------------------------------------------
 void Concatenation(int * firstPtr, int * secondPtr, int * newNumberPtr)
 {
 	int value =	ZERO;
@@ -165,6 +183,24 @@ void Opposite(int *numberPtr, int *newNumberPtr)
 	}
 }
 
+//---------------------------------------------------------------------------------------
+//                                 		Divide
+//                                 		------
+//
+//     General 		: The function divide between two numbers.
+//
+//     Parameters 	:
+//         ptr_first_number		- number_pointer(In)
+//         ptr_second_number 	- number_pointer(In)
+//		   ptr_result 			- result pointer(In)
+//
+//     Return Value : None
+//
+//---------------------------------------------------------------------------------------
+// Programmer 	: Dror Tal
+// Student No 	: 322534793
+// date 		: 8.11.2019
+//---------------------------------------------------------------------------------------
 void Divide(double *ptr_first_number, double *ptr_second_number, int *ptr_result)
 {
 	//definding variables.
@@ -186,6 +222,25 @@ void Divide(double *ptr_first_number, double *ptr_second_number, int *ptr_result
 	(*ptr_result) = (sign > ZERO) ? answer : answer - answer - answer;
 }
 
+//---------------------------------------------------------------------------------------
+//                                 		Divide The Rest
+//                                 		---------------
+//
+//     General 		: The function divide between two numbers and put in 
+//					  the result the rest of the divide.
+//
+//     Parameters 	:
+//         ptr_first_number		- number_pointer(In)
+//         ptr_second_number 	- number_pointer(In)
+//		   ptr_result 			- result pointer(In)
+//
+//     Return Value : None
+//
+//---------------------------------------------------------------------------------------
+// Programmer 	: Dror Tal
+// Student No 	: 322534793
+// date 		: 8.11.2019
+//---------------------------------------------------------------------------------------
 void Module(int *ptr_first_number,int *ptr_second_number, int *ptr_result)
 {
 	//definding variables.
@@ -204,6 +259,24 @@ void Module(int *ptr_first_number,int *ptr_second_number, int *ptr_result)
 	(*ptr_result) = (sign > ZERO) ? (first_number) : (first_number - first_number - first_number);
 }
 
+//---------------------------------------------------------------------------------------
+//                             Base unknown to base 10
+//                             -----------------------
+//
+//     General : The function take a number and a base and translates it to base 10
+//
+//     Parameters :
+//         ptr_base 		- base of the number_pointer(In)
+//         ptr_number 		- number_pointer(In)
+//         ptr_result		- number_pointer(In)
+//
+//     Return Value : None
+//
+//---------------------------------------------------------------------------------------
+// Programmer 	: Dror Tal
+// Student No 	: 322534793
+// date 		: 8.11.2019
+//---------------------------------------------------------------------------------------
 void BaseTransform(int *ptr_number, int *ptr_base, double *ptr_result)
 {
 	//definding variables.
@@ -223,6 +296,24 @@ void BaseTransform(int *ptr_number, int *ptr_base, double *ptr_result)
 	(*ptr_result) = sum;
 }
 
+//---------------------------------------------------------------------------------------
+//                             		Date Delta
+//                             		----------
+//
+//     General : The function take a number and a base and translates it to base 10
+//
+//     Parameters :
+//         ptr_first_date 		- the first date pointer(In)
+//         ptr_second_date 		- the second date pointer(In)
+//         ptr_result			- result pointer(In)
+//
+//     Return Value : None
+//
+//---------------------------------------------------------------------------------------
+// Programmer 	: Dror Tal
+// Student No 	: 322534793
+// date 		: 8.11.2019
+//---------------------------------------------------------------------------------------
 void DateDelta(int *ptr_first_date, int *ptr_second_date, int *ptr_result)
 {
 	//definding variables.
