@@ -1,0 +1,4 @@
+﻿  General.c
+c:\users\dror\desktop\new folder (6)\thirteenth-grade-homework\c\mission13c\mission13c\general.c(66): warning C4047: 'function': 'char *' differs in levels of indirection from 'string (*)'
+c:\users\dror\desktop\new folder (6)\thirteenth-grade-homework\c\mission13c\mission13c\general.c(66): warning C4024: 'equal': different types for formal and actual parameter 1
+  Mission13C.vcxproj -> C:\Users\dror\Desktop\New folder (6)\Thirteenth-Grade-Homework\C\Mission13C\Debug\Mission13C.exe

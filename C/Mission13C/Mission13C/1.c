@@ -17,6 +17,6 @@ void main(void)
 		gets(arr[i]);
 	}
 
-	printf("%d\n", MaxStreakInVec(arr, 5));
+	printf("%hu\n", findStrInVecStr(arr, 5));
 	scanf("%d", &i);
 }
