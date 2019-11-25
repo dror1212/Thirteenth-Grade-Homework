@@ -10,10 +10,11 @@
 #define TWO 2
 #define THREE 3
 #define FOUR 4
+#define TRUE 1
+#define FALSE 0
 
 typedef unsigned char byte;
 
-void RemoveBits(byte* row, unsigned short count, int*counter);
 BOOLEAN isEven(int num);
 int calculateBitsInInt(BOOLEAN isSigned);
 double power(double number, int numberOfTimes);
@@ -22,6 +23,7 @@ unsigned short CountBits(byte b);
 void PrintGetRow();
 void PrintGetRemoveCount();
 unsigned short InputRow();
+void RemoveBits(byte* row, unsigned short count, int*counter);
 unsigned short SumBits(byte* vec, unsigned short lenght);
 void PrintBits(byte b);
 void PrintRows(byte* rows, unsigned short lenght);

@@ -1,7 +1,7 @@
 #pragma once
 #include "General.h"
 
-void main(void)
+void main6(void)
 {
 	int x;
 	int N;

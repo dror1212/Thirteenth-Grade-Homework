@@ -117,9 +117,8 @@
   <ItemGroup>
     <ClCompile Include="1.c" />
     <ClCompile Include="3.c" />
-    <ClCompile Include="4.c" />
-    <ClCompile Include="5.c" />
     <ClCompile Include="2.c" />
+    <ClCompile Include="4.c" />
     <ClCompile Include="General.c" />
   </ItemGroup>
   <ItemGroup>

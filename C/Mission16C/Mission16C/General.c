@@ -48,7 +48,7 @@ unsigned short CountBits(byte b)
 	unsigned short loop_lenght = sizeof(b) * BITS_IN_BYTE;
 	while (loop_lenght--)
 	{
-		counter += !EvenNumber(b);
+		counter += !isEven(b);
 		b >>= ONE;
 	}
 
@@ -89,7 +89,7 @@ void PrintBits(byte b)
 	unsigned short lenght = sizeof(b) * BITS_IN_BYTE;
 	while (lenght--)
 	{
-		printf("%hu,", !EvenNumber(b));
+		printf("%hu,", !isEven(b));
 		b >>= ONE;
 	}
 }
@@ -128,9 +128,61 @@ void Bot(byte* rows, unsigned short lenght, int * counter)
 
 	RemoveBits(max_row, MAX(CountBits(*max_row) / TWO * TWO, ONE), counter); // - ONE
 }
-void Bot5(byte* rows, unsigned short lenght, int* counter)
-{
-	byte* max_row = MaxBitsRow(rows, lenght);
 
-	RemoveBits(max_row, MAX(CountBits(*max_row) / TWO * TWO - ONE, ONE), counter); // - ONE
+
+// Those are the logics for question 5
+BOOLEAN tryWin(byte *ptr, int length)
+{
+	BOOLEAN check = FALSE;;
+	byte *ptrStart = ptr;
+	byte *ptrEnd = ptr + length;
+	int counter = ZERO;
+	int isThereAOne = FALSE;
+	while (ptr != ptrEnd)
+	{
+		(*ptr > ZERO) ? counter++ : counter;
+		isThereAOne = (*ptr == ZERO) ? TRUE : isThereAOne;
+	}
+	ptr = ptrStart;
+	if (counter < length && isThereAOne)
+	{
+		(*ptr == ONE) ? ptr++ : ptr;
+		*ptr = ZERO;
+		check = TRUE;
+	}
+	return check;
+}
+
+void myBot5(byte * ptr, int length)
+{
+	int result = ZERO;
+	byte *ptrEnd = ptr + length;
+	byte *ptrStart = ptr;
+	BOOLEAN check = tryWin(ptr,length);
+	result = *ptr;
+	ptr++;
+	if (!check)
+	{
+		while (ptr != ptrEnd)
+		{
+			result = result ^ *ptr;
+		}
+		if (result != ZERO)
+		{
+			ptr = ptrStart;
+			while ((*ptr <= result) && (ptr != ptrEnd))
+			{
+				ptr++;
+			}
+			*ptr -= result;
+		}
+		else
+		{
+			while ((*ptr <= ZERO) && (ptr != ptrEnd))
+			{
+				ptr++;
+			}
+			*ptr -= ONE;
+		}
+	}
 }

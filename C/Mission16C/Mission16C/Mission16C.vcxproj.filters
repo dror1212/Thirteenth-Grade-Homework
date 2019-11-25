@@ -24,13 +24,10 @@
     <ClCompile Include="3.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="4.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="5.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="General.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="4.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
