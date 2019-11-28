@@ -1,5 +1,0 @@
-﻿  functions.c
-  main.c
-c:\users\dror\desktop\new folder (5)\thirteenth-grade-homework\c\pointerslibraryc\pointerslibraryc\main.c(12): warning C4477: 'scanf' : format string '%d' requires an argument of type 'int *', but variadic argument 1 has type 'int'
-  Generating Code...
-  PointersLibraryC.vcxproj -> C:\Users\dror\Desktop\New folder (5)\Thirteenth-Grade-Homework\C\PointersLibraryC\Debug\PointersLibraryC.exe

@@ -1,4 +1,0 @@
-﻿  functions.c
-c:\users\dror\desktop\mission12c\mission12c\functions.c(17): warning C4047: 'function': 'char *' differs in levels of indirection from 'string (*)'
-c:\users\dror\desktop\mission12c\mission12c\functions.c(17): warning C4024: 'equal': different types for formal and actual parameter 1
-  Mission12C.vcxproj -> C:\Users\dror\Desktop\Mission12C\Debug\Mission12C.exe

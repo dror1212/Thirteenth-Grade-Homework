@@ -1,3 +1,0 @@
-﻿  main.c
-c:\users\dror\desktop\mission9c\mission9c\main.c(270): warning C4477: 'scanf' : format string '%hu' requires an argument of type 'unsigned short *', but variadic argument 1 has type 'int'
-  Mission9C.vcxproj -> C:\Users\dror\Desktop\Mission9C\Debug\Mission9C.exe
